@@ -2,7 +2,14 @@ const http = require('http');
 
 http
 .createServer((req, res) => {
-    res.write('Hello from node web server');
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.write(`<html>
+    <head>
+    <body>
+    <h1>I need sleep</h1>
+    </body>
+    </head>
+    </html>`);
     res.end();
 })
 .listen(80);
